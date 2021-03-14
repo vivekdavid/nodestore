@@ -1,0 +1,37 @@
+
+
+
+<!--image size to be used should be - w-750, h-500; w-1.5, h-1 -->
+
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<!-- reference line not for production --> 
+<p>Second set of items </p><br/>
+<!-- end of refrence line --> 
+<div class="flex content-center flex-wrap bg-gray-200">
+<br/>
+
+{% for product in products %}
+
+  <div class=" w-1/5 p-2">
+   <div class=" bg-white shadow-lg rounded-lg overflow-hidden  ">
+		<div class="px-4 py-2">
+    <h1 class="text-gray-900 font-bold ">{{product.name}}</h1>
+    <p class="text-gray-600 text-sm mt-1">{{product.mini_discrip}}</p>
+		</div>
+        <img class="{{product.img_sm}}}}" src="=80" alt="{{product.name}}">
+		<div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+            <h1 class="text-gray-200 font-bold text-xl">$ {{product.price}}</h1>
+            <a href = "http://localhost:3000/{{product.url}}" class=" button px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded">Add to Cart</a>
+		</div>
+</div>
+</div>
+ 
+{% endfor %}
+ </div>
+
+
+
+{% endblock %}
